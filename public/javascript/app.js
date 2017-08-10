@@ -1,4 +1,4 @@
-var app = angular.module('angularjsNodejsTutorial',[]);
+var app = angular.module('week4prep',[]);
 app.controller('myController', function($scope, $http) {
     $scope.data = [];
     var request = $http.get('/data');    
