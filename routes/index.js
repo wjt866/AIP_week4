@@ -8,11 +8,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/data', function(req, res, next) {
-    res.json([{"title": "People Places Things"},
-        {"releaseDate": "14/08/2015"},
-        {"duration": "85 minutes"},
-        {"genre": "Comedy"},
-        {"synopsis": "Will Henry is a newly single graphic novelist..."},]);
+		res.json([{"id":1, "title": "People Places Things",
+ 		"releaseDate": "14/08/2015", "duration": "85 minutes", "genre": "Comedy", 
+ 		"synopsis": "Will Henry is a newly single graphic novelist..."}]);
 });
 
 module.exports = router;
