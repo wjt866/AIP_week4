@@ -7,7 +7,7 @@
     </head>
     <body >
         <div ng-controller="myController">
-        <ul>
+        <ul ng-repeat="item in data">
         	<li> title: {{item.title}} </li>
         	<li> release date: {{item.releaseDate}}</li>
         	<li> duration: {{item.duration}}</li>
