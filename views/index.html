@@ -3,18 +3,40 @@
     <head>
         <title>Our Movie Catalogue</title>
         <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.2/angular.js"></script>
-        <script src="javascript/app.js" type="text/javascript"></script> <!-- not created yet -->
+        <script src="javascript/app.js" type="text/javascript"></script>
+        <!-- BOOTSTRAP Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- BOOTSTRAP jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- BOOTSTRAP Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </head>
     <body >
+    <div class="container">
         <div ng-controller="myController">
-        <ul ng-repeat="item in data">
-        	<li> title: {{item.title}} </li>
-        	<li> release date: {{item.releaseDate}}</li>
-        	<li> duration: {{item.duration}}</li>
-        	<li> genre: {{item.genre}}</li>
-        	<li> synopsis: {{item.synopsis}}</li>
-        </ul>
-
+            <h2>Movie Review</h2>
+            <table class="table table-striped" ng-repeat="item in data">
+                <tr>
+                    <td> title: </td>
+                    <td> {{item.title}} </td>
+                </tr>
+                <tr>
+                    <td>release date: </td>
+                    <td>{{item.releaseDate}}</td>
+                </tr>
+                <tr>
+                    <td>duration:</td>
+                    <td>{{item.duration}}</td>
+                </tr>
+                <tr>
+                    <td>genre:</td>
+                    <td>{{item.genre}}</td>
+                </tr>
+                <tr>
+                    <td>synopsis: </td>
+                    <td>{{item.synopsis}}</td>
+                </tr>
+            </table>
         </div>
         <form action="/" ng-submit="submit()" name="myForm" ng-controller="moviePostController">
             <h2>Change the review:</h2><br/>
@@ -45,5 +67,6 @@
                 </tr>
             </table>
         </form>
+    </div>
     </body>
 </html>
