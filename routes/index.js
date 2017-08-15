@@ -22,6 +22,8 @@ router.get('/data', function(req, res, next) {
     res.json(jsonVariable);
 });
 
+//Add client side validation here
+
 router.post('/', function (req, res, next) {
     jsonVariable = req.body;
     //res.send(req.body); //test

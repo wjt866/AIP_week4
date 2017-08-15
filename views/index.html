@@ -38,32 +38,41 @@
                 </tr>
             </table>
         </div>
-        <form action="/" ng-submit="submit()" name="myForm" ng-controller="moviePostController">
+        <form action="/" ng-submit="submit()" name="myForm" ng-controller="moviePostController" novalidate>
+
+            <!-- Add form validation here (client side) -->
             <h2>Change the review:</h2><br/>
             <table class="table table-striped">
                 <tr>
-                    <td>Title:</td>
-                    <td><input type="text" size="40" ng-model="title"></td>
+                    <td>Title !:</td>
+                    <td><input type="text" size="40" ng-model="title" required></td>
+                    <div ng-show="myForm.$submitted || myForm.title.$touched">
+                        <div ng-show="myForm.title.$error.required">This is required</div>
+                    </div>
+
                 </tr>
                 <tr>
                     <td>Release Date:</td>
-                    <td><input type="text" size="40" ng-model="releaseDate"></td>
+                    <td><input type="text" size="40" ng-model="releaseDate" required></td>
+                    <span ng-show="myForm.releaseDate.$touched || myForm.releaseDate.$invalid">The name is required.</span>
+                    </p>
                 </tr>
                 <tr>
                     <td>Duration:</td>
-                    <td><input type="text" size="40" ng-model="duration"></td>
+                    <td><input type="text" size="40" ng-model="duration" required></td>
                 </tr>
                 <tr>
                     <td>Genre:</td>
-                    <td><input type="text" size="40" ng-model="genre"></td>
+                    <td><input type="text" size="40" ng-model="genre" required></td>
                 </tr>
                 <tr>
                     <td>Synopsis:</td>
-                    <td><input type="text" size="40" ng-model="synopsis"/></td>
+                    <td><input type="text" size="40" ng-model="synopsis" required/></td>
+                    <p ng-show="myForm.synopsis.$invalid"> Enter a synopsis please</p>
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input class="btn" type="submit" id="submit" value="submit"></td>
+                    <td><input class="btn" type="submit" id="submit" value="submit" ></td> <!--ng-disabled="myForm.$isValid"-->
                 </tr>
             </table>
         </form>
